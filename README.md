@@ -4,7 +4,7 @@ Load users list. Display each users info. Edit and save users name.
 
 Для запуска скачайте репозиторий и выполните: 
 
-	npm init
+	npm install
 	npm start
 
 Проследйте по адресу:
