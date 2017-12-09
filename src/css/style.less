@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+.btn {
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 1px 0 0 rgba(0,0,0,.08);
+	border-radius: 7px;
+	transition: all .5s ease;
+	cursor: pointer;
+	
+	&:hover {
+		box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 3px 6px -1px rgba(0,0,0,.07);
+	}
+}
+
+@menu_height: 64px;
+
+.menu {
+	@highlight_color: #f9f8f8;
+	
+	.flex-row;
+	
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: @menu_height;
+	background-color: #fffefe;
+	box-shadow: 0 1px 0 0 rgba(0,0,0,.04);
+	
+	.chatfuel-logo {
+		width: 100px;
+		background-image: url(../assets/chatfuel-logo.png);
+		background-position: center center;
+		background-size: auto @menu_height*3/5;
+		background-repeat: no-repeat;
+		border-right: 1px @highlight_color solid;
+	}
+	.bot {
+		.flex-row;
+		
+		.bot-logo {
+			align-self: center;
+			@bot_width: 35px;
+			width: @bot_width;
+			height: @bot_width;
+			border-radius: 50%;
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.bot-name {
+			padding-left: 10px;
+		}
+	}
+	.breadcrumb {
+		padding: 0px 10px;
+		line-height: @menu_height;
+		cursor: default;
+		
+		&.link {
+			cursor: pointer;
+			transition: all .5s ease;
+			
+			&:hover {
+				background-color: @highlight_color;
+			}
+		}
+		.fa {
+			font-size: 14px;
+		}
+		a {
+			display: block;
+			line-height: @menu_height;
+		}
+	}
+}
+.page-content {
+	z-index: 1;
+	padding-top: @menu_height;
+	min-height: 100vh;
+	background-color: #f3f2f2;
+	
+	.page-info {
+		padding: 100px;
+		text-align: center;
+		line-height: 100px;
+		
+		h1 .fa {
+			font-size: 34px;
+		}
+	}
+}
+
+.users-page {
+	.users-list {
+		.flex-row;
+		
+		flex-wrap: wrap;
+		padding: 5px;
+		
+		.user-card-wrap {
+			padding: 5px;
+			
+			.user-card {
+				@spacing: 15px;
+				@height: 75px;
+				
+				.flex-row;
+				.btn;
+				
+				padding: @spacing;
+				
+				.user-avatar {
+					align-self: center;
+					width: @height;
+					height: @height;
+					border-radius: 20%;
+					background-position: center center;
+					background-size: cover;
+					background-repeat: no-repeat;
+				}
+				.name {
+					padding-left: @spacing;
+					line-height: @height;
+				}
+			}
+		}
+	}
+	.pagination {
+		@height: 50px;
+		@padding: 20px;
+		
+		padding: @padding;
+		height: @height + @padding*2;
+		
+		.page-btn {
+			.btn;
+			
+			width: 45%;
+			height: @height;
+			box-shadow: none;
+			line-height: @height;
+			
+			&:hover {
+				box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 1px 0 0 rgba(0,0,0,.08);
+			}
+			.fa {
+				margin: 15px;
+				font-size: 12px;
+			}
+		}
+		.prev {
+			float: left;
+		}
+		.next {
+			float: right;
+		}
+	}
+}
+
+.user-page {
+	.user-card-wrap {
+		@spacing: 25px;
+		
+		.flex-row;
+		
+		margin: auto;
+		padding-top: @spacing;
+		width: 900px;
+		
+		.user-avatar {
+			width: 250px;
+			
+			img {
+				border-radius: 10px;
+			}
+		}
+		.info-wrap {
+			padding-left: @spacing;
+			width: 100%;
+			
+			.name {
+				padding: 5px 0px;
+				width: 100%;
+				background-color: transparent;
+				border: 0;
+				// border-bottom: 1px rgba(0, 0, 0, 0.45) solid;
+				font-size: 24px;
+			}
+			.sign {
+				font-size: 12px;
+			}
+		}
+		.save-btn {
+			.btn;
+			
+			display: inline-block;
+			margin: 10px 0px 0px;
+			padding: 0px 10px;
+			line-height: 40px;
+			
+			.fa {
+				margin-right: 5px;
+				font-size: 19px;
+			}
+		}
+	}
+}
