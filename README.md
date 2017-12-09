@@ -7,5 +7,10 @@ Load users list. Display each users info. Edit and save users name.
 	npm install
 	npm start
 
-Проследйте по адресу:
+Проследуйте по адресу:
 http://localhost:3000/users
+
+Major libraries:
+reactjs
+mobx
+
